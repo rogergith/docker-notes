@@ -50,6 +50,17 @@ Ver todos los contenedores que estan en nuestro sistema.
 ```sh
 docker ps -a
 ```
+#### Puerto en Docker
+
+Se crea un contenedor llamado `monguito` que escuchara en el puerto `27017` y estara mapeado con el puerto `27015` del contenedor
+```sh
+docker create -p27017:27015 --name monguito mongo 
+```
+
+Docker asigna un puerto para conectarnos al contenedor
+```sh
+docker create -p27015 --name monguito mongo
+```
 
 Creamos y arrancamos un contenedor basado en la imagen postgres en su version 12 llamado `database_hf` que escuchara en el puerto `5499` y estara mapeado al puerto `5432`. EL usuario configurado para la base de datos sera `postgres` con el password `rogerdeb`, su host `127.0.0.1` y una base dedatos de prueba `testdb`. 
 
