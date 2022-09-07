@@ -19,7 +19,37 @@ Eliminar una imagen `node` version `16`
 docker image rm node:16
 ```
 
-Lista las imagenes que tenemos descargada en nuestra maquina.
+#### Comando para contenedores
+
+Crear un contenerdor de mongo a partir de una imagen de mongo previamente descargada.
+```sh
+docker create mongo
+```
+
+Crear un contenedor con nombre `monguito` en base a la imagen de mongo.
+```sh
+docker create --name monguito mongo
+```
+
+Iniciar un contenedor
+```sh
+docker start ID_CONTENEDOR o NOMBRE_CONTENEDOR.
+```
+
+Verificar si el contenedor esta corriendo de forma correcta.
+```sh
+docker ps
+```
+
+Detener un contenedor
+```sh
+docker stop ID_CONTENEDOR o NOMBRE_CONTENEDOR.
+```
+
+Ver todos los contenedores que estan en nuestro sistema.
+```sh
+docker ps -a
+```
 
 Creamos y arrancamos un contenedor basado en la imagen postgres en su version 12 llamado `database_hf` que escuchara en el puerto `5499` y estara mapeado al puerto `5432`. EL usuario configurado para la base de datos sera `postgres` con el password `rogerdeb`, su host `127.0.0.1` y una base dedatos de prueba `testdb`. 
 
