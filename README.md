@@ -67,5 +67,12 @@ Creamos y arrancamos un contenedor basado en la imagen postgres en su version 12
 El volumen para persistir las base de datos estaran en el directorio `C:/data_postgres_hf` del equipo anfitrion mapeado con el direcotio `/var/lib/postgresql/data` de contenedor.
 
 ```sh
-docker run --name database_hf -p 5499:5432 -v C:/data_postgres_hf:/var/lib/postgresql/data -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=rogerdeb -e POSTGRES_DB=testdb -e DATABASE_HOST=127.0.0.1  postgres:12
+docker run --name database_hf \ 
+-p 5499:5432 \ 
+-v C:/data_postgres_hf:/var/lib/postgresql/data \ 
+-e POSTGRES_USER=postgres \ 
+-e POSTGRES_PASSWORD=rogerdeb \ 
+-e POSTGRES_DB=testdb \ 
+-e DATABASE_HOST=127.0.0.1 \
+postgres:12
 ```
